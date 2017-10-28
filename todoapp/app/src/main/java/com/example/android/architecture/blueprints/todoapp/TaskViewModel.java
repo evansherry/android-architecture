@@ -53,7 +53,7 @@ public abstract class TaskViewModel extends BaseObservable
         mTasksRepository = tasksRepository;
 
         // Exposed observables depend on the mTaskObservable observable:
-        mTaskObservable.addOnPropertyChangedCallback(new OnPropertyChangedCallback() {
+        mTaskObservable.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
             @Override
             public void onPropertyChanged(Observable observable, int i) {
                 Task task = mTaskObservable.get();
@@ -102,6 +102,8 @@ public abstract class TaskViewModel extends BaseObservable
             mTasksRepository.activateTask(task);
             snackbarText.set(mContext.getResources().getString(R.string.task_marked_active));
         }
+        // need notify to change background
+        notifyPropertyChanged(BR.completed);
     }
 
     @Bindable
