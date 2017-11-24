@@ -21,7 +21,6 @@ import android.databinding.Observable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
@@ -40,6 +39,7 @@ import com.example.android.architecture.blueprints.todoapp.data.Task;
 import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository;
 import com.example.android.architecture.blueprints.todoapp.databinding.TaskItemBinding;
 import com.example.android.architecture.blueprints.todoapp.databinding.TasksFragBinding;
+import com.example.android.architecture.blueprints.todoapp.test.BaseFragment;
 import com.example.android.architecture.blueprints.todoapp.util.SnackbarUtils;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ import java.util.List;
 /**
  * Display a grid of {@link Task}s. User can choose to view all, active or completed tasks.
  */
-public class TasksFragment extends Fragment {
+public class TasksFragment extends BaseFragment {
 
     private TasksViewModel mTasksViewModel;
 
@@ -76,6 +76,7 @@ public class TasksFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        onCreateView();
         mTasksFragBinding = TasksFragBinding.inflate(inflater, container, false);
 
         mTasksFragBinding.setView(this);

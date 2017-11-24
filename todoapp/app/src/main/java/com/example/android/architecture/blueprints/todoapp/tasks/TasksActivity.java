@@ -25,7 +25,6 @@ import android.support.test.espresso.IdlingResource;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
@@ -35,11 +34,12 @@ import com.example.android.architecture.blueprints.todoapp.ViewModelHolder;
 import com.example.android.architecture.blueprints.todoapp.addedittask.AddEditTaskActivity;
 import com.example.android.architecture.blueprints.todoapp.statistics.StatisticsActivity;
 import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailActivity;
+import com.example.android.architecture.blueprints.todoapp.test.BaseActivity;
 import com.example.android.architecture.blueprints.todoapp.util.ActivityUtils;
 import com.example.android.architecture.blueprints.todoapp.util.EspressoIdlingResource;
 
 
-public class TasksActivity extends AppCompatActivity implements TaskItemNavigator, TasksNavigator {
+public class TasksActivity extends BaseActivity implements TaskItemNavigator, TasksNavigator {
 
     private DrawerLayout mDrawerLayout;
 
